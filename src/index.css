@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+        font-family: 'Inter', sans-serif;
+}
+.setfont{
+    font-family: 'Cinzel', serif;
+
+}
+.set-chef-bg{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.589),rgba(0, 0, 0, 0.671)) ,url(../src/assets/home/chef-service.jpg);
+    height: 70vh;
+    width: 100%;
+
+}
+.setFeaturesbg{
+    height: 80vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.726),rgba(0, 0, 0, 0.658)) ,url(./assets/home/featured.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
