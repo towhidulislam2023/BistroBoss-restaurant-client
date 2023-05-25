@@ -7,6 +7,7 @@ import CallusSec from '../CallusSec/CallusSec';
 import Features from '../Features/Features';
 import PopularMenu from '../PopularMenu/PopularMenu';
 import ChefRecommends from '../ChefRecommends/ChefRecommends';
+import Testimonals from '../Testimonals/Testimonals';
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
             <CallusSec></CallusSec>
             <ChefRecommends></ChefRecommends>
             <Features></Features>
+            <Testimonals></Testimonals>
         </div>
     );
 };
