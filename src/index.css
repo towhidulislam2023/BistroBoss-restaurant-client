@@ -4,23 +4,34 @@
 @tailwind utilities;
 
 
-body{
-        font-family: 'Inter', sans-serif;
+body {
+    font-family: 'Inter', sans-serif;
 }
-.setfont{
+
+.setfont {
     font-family: 'Cinzel', serif;
 
 }
-.set-chef-bg{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.589),rgba(0, 0, 0, 0.671)) ,url(../src/assets/home/chef-service.jpg);
+
+.set-chef-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.671)), url(../src/assets/home/chef-service.jpg);
     height: 70vh;
     width: 100%;
 
 }
-.setFeaturesbg{
+
+.setFeaturesbg {
     height: 80vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.726),rgba(0, 0, 0, 0.658)) ,url(./assets/home/featured.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.726), rgba(0, 0, 0, 0.658)), url(./assets/home/featured.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.setbginlogin {
+    height: 100vh;
+    background-image: url(./assets/others/authentication.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }

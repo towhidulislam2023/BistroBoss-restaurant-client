@@ -4,10 +4,10 @@ import cart from '../../assets/icon/cart.png';
 const Header = () => {
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/">CONTACT us</Link></li>
+        <li><Link to="/">CONTACT US</Link></li>
         <li><Link to="/">DASHBOARD</Link></li>
         <li><Link to="/menu">Our Menu</Link></li>
-        <li><Link to="/shop">Our Shop</Link></li>
+        <li><Link to="/shop/salad">Our Shop</Link></li>
         <li><Link><img className='w-12' src={cart} alt="" /></Link></li>
         <li> <button>SIGN OUT</button> </li>
         <li> <div className="tooltip tooltip-bottom" data-tip="hello">
