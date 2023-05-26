@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import cart from '../../assets/icon/cart.png';
 const Header = () => {
+    const user=0
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/">CONTACT US</Link></li>
@@ -9,7 +10,13 @@ const Header = () => {
         <li><Link to="/menu">Our Menu</Link></li>
         <li><Link to="/shop/salad">Our Shop</Link></li>
         <li><Link><img className='w-12' src={cart} alt="" /></Link></li>
-        <li> <button>SIGN OUT</button> </li>
+        {
+            user ? <button className='btn mt-3'>Logout</button> :<li> <Link to={"/login"}>Login</Link> </li>
+        }
+
+
+
+        {/* <li> <Link to={"/login"}>Login</Link> </li> */}
         <li> <div className="tooltip tooltip-bottom" data-tip="hello">
             <div className="avatar placeholder">
                 <div className="bg-neutral-focus text-neutral-content rounded-full w-12">

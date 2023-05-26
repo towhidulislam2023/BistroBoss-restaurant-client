@@ -9,9 +9,9 @@ import useMenu from '../../../hooks/useMenu';
 import { useParams } from 'react-router-dom';
 const OurShop = () => {
     const [menu] = useMenu()
-    const catagories = ['salad', 'pizza', 'soup', 'dessert','drinks']
-    const {catagory}=useParams()
-    const initialIndex=catagories.indexOf(catagory)
+    const catagories = ['salad', 'pizza', 'soup', 'dessert', 'drinks']
+    const { catagory } = useParams()
+    const initialIndex = catagories.indexOf(catagory)
     const salad = menu && menu.filter(data => data.category === "salad")
     const pizza = menu && menu.filter(data => data.category === "pizza")
     const soup = menu && menu.filter(data => data.category === "soup")
