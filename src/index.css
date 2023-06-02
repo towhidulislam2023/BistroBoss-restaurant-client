@@ -21,7 +21,7 @@ body {
 }
 
 .setFeaturesbg {
-    height: 80vh;
+    /* height: 80vh; */
     background-image: linear-gradient(rgba(0, 0, 0, 0.726), rgba(0, 0, 0, 0.658)), url(./assets/home/featured.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -35,3 +35,5 @@ body {
     background-repeat: no-repeat;
 
 }
+
+

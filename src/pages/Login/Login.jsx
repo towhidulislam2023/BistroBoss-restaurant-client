@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img1 from '../../assets/others/authentication1.png';
 import { useForm } from 'react-hook-form';
 import { AuthProviderContext } from '../../Provider/AuthProvider';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import GoogleGit from './GoogleGit';
 
 const Login = () => {
     const [error, setError] = useState("")
@@ -11,13 +12,15 @@ const Login = () => {
     const { logInuser } = useContext(AuthProviderContext)
     const [captchamatched, setCaptchaMatch] = useState(true)
     const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/" 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
         console.log(data);
         logInuser(data.email, data.password)
             .then(result => {
                 console.log(result.user);
-                navigate("/")
+                navigate(from, { replace: true })
             })
             .catch(error => setError(error.message))
 
@@ -73,12 +76,12 @@ const Login = () => {
                             </div>
 
                         </div>
-                        <button disabled={captchamatched} className='btn w-[100%] mx-auto btn-warning mt-10'>Login
+                        <button disabled={false} className='btn w-[100%] mx-auto btn-warning mt-10'>Login
                         </button>
                         <p className='text-center my-4'>Dont have an Account ? <Link className='underline text-yellow-600 ' to={'/registar'}>Create an account</Link> </p>
                     </form>
                 </div>
-                {/* <GoogleGit></GoogleGit> */}
+                <GoogleGit></GoogleGit>
             </div>
             <div>
                 <img className='w-[30rem]' src={img1} alt="" />

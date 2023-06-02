@@ -10,7 +10,7 @@ const MenuCover = ({bannarimg, title, titledesc}) => {
         bgImageAlt="as"
         strength={-200}
     >
-            <div className="hero h-[70vh]">
+            <div className="hero h-[40vh] md:h-[70vh]">
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md bg-black px-5 bg-opacity-10 py-10 ">

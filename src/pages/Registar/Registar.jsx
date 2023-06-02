@@ -1,18 +1,46 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img1 from '../../assets/others/authentication.gif';
 import { useForm } from 'react-hook-form';
 import { AuthProviderContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Registar = () => {
     const { signupuser, updateUserinfo }=useContext(AuthProviderContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/" 
     const onSubmit = (data) => {
         console.log(data);
         signupuser(data.email,data.password)
         .then(result=>{
             console.log(result.user);
             updateUserinfo(data.name,data.url)
+            const userInfo={email:data.email , name:data.name}
+            fetch("http://localhost:5000/users",{
+                method:"POST",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify(userInfo)
+
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    navigate(from, { replace: true })
+                }
+            })
+            
         })
         .catch(error=>{
             console.log(error);

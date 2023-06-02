@@ -5,6 +5,12 @@ import OurMenu from "../pages/OurMenu/OurMenu/OurMenu";
 import OurShop from "../pages/OurShop/OurShop/OurShop";
 import Login from "../pages/Login/Login";
 import Registar from "../pages/Registar/Registar";
+import PrivateRoute from "./PrivateRoute";
+import DashBoard from "../Layout/DashBoard";
+import Cart from "../DashBoardPages/Cart/Cart";
+import UserList from "../DashBoardPages/UserList/UserList";
+import AddItems from "../DashBoardPages/AddItems/AddItems";
+import ManageItem from "../DashBoardPages/ManageItems/ManageItem";
 
 
 const router = createBrowserRouter([
@@ -23,7 +29,7 @@ const router = createBrowserRouter([
            
             {
                 path:"/shop/:catagory",
-                element:<OurShop></OurShop>
+                element: <PrivateRoute><OurShop></OurShop></PrivateRoute>
             },
         ]
     },
@@ -35,5 +41,27 @@ const router = createBrowserRouter([
         path: "/registar",
         element:<Registar></Registar>,
     },
+    {
+        path:"/dashboard",
+        element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute> ,
+        children:[
+            {
+                path:"/dashboard/cart",
+                element: <Cart></Cart>
+            },
+            {
+                path:"/dashboard/users",
+                element:<UserList></UserList>
+            },
+            {
+                path:"/dashboard/additems",
+                element:<AddItems></AddItems>
+            },
+            {
+                path:"/dashboard/manageitems",
+                element:<ManageItem></ManageItem>
+            },
+        ]
+    }
 ]);
 export default router

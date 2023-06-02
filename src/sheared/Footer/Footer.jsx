@@ -3,8 +3,8 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <div className='flex'>
-                <div className='w-[50%] mx-auto bg-[#1F2937] h-[50vh] flex justify-center items-center'>
+            <div className='md:flex'>
+                <div className='md:w-[50%] mx-auto bg-[#1F2937] h-[50vh] flex justify-center items-center'>
                     <div className='text-white text-center'>
                         <h1 className="text-3xl my-2">CONTACT US</h1>
                         <p>123 ABS Street, Uni 21, Bangladesh</p>
@@ -13,7 +13,7 @@ const Footer = () => {
                         <p>Sat - Sun: 10:00 - 23:00</p>
                     </div>
                 </div>
-                <div className='w-[50%] mx-auto bg-[#111827] h-[50vh] flex justify-center items-center text-white'>
+                <div className='md:w-[50%] mx-auto bg-[#111827] h-[50vh] flex justify-center items-center text-white'>
                     <div className='text-center space-y-5'>
                         <h1 className="text-3xl mb-6">Follow US</h1>
                         <span className="footer-title">Join us on social media</span>
